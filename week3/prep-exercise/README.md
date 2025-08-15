@@ -8,16 +8,16 @@ Files to be modified are located in the `server` folder.
 
 This will allow you to learn and practice using NodeJs and ExpressJs:
 
-  - Securing your application with authentication and authorization principles
-  - Implement a standard API for users management with register, login, getProfile, and logout
-  - Managing user sessions using JWT (JSON Web Tokens)
+- Securing your application with authentication and authorization principles
+- Implement a standard API for users management with register, login, getProfile, and logout
+- Managing user sessions using JWT (JSON Web Tokens)
 
 ## Requirements
 
 You need to implement all those endpoints
 
 **Note:** We provide a helper to store your users so you can focus on learning the security part.
-          Please read more in [the next section](#database-helper)
+Please read more in [the next section](#database-helper)
 
 1. Register Endpoint:
 
@@ -57,12 +57,12 @@ We understand there is a lot going on this week. To help you focus on user manag
 In [`users.js`](./users.js) you will find few lines that has been already added for you:
 
 ```javascript
-import newDatabase from './database.js'
+import newDatabase from "./database.js";
 
 // Change this boolean to true if you wish to keep your
 // users between restart of your application
-const isPersistent = true
-const database = newDatabase({isPersistent})
+const isPersistent = true;
+const database = newDatabase({ isPersistent });
 ```
 
 ### To store something
@@ -73,12 +73,12 @@ To store something in the database you can use `database.create`
 
 ```javascript
 const theObjectIWouldLikeToStore = {
-    some: "object with one key"
-}
+  some: "object with one key",
+};
 
-const storedObject = database.create(theObjectIWouldLikeToStore)
+const storedObject = database.create(theObjectIWouldLikeToStore);
 
-console.log(storedObject)
+console.log(storedObject);
 // {
 //    some: "object with one key",
 //    id: '6a9252f7-d74a-4c6f-8076-dac277549e9b'
@@ -92,18 +92,15 @@ You can only get something by `id` using `database.getById`
 It will return the first object it finds with the passed `id` or it will return `undefined`
 
 ```javascript
-const storedObject = database.getById('6a9252f7-d74a-4c6f-8076-dac277549e9b')
+const storedObject = database.getById("6a9252f7-d74a-4c6f-8076-dac277549e9b");
 // {
 //    some: "object with one key",
 //    id: '6a9252f7-d74a-4c6f-8076-dac277549e9b'
 // }
 
-const notFoundObject = database.getById('NOT-A-VALID-ID')
+const notFoundObject = database.getById("NOT-A-VALID-ID");
 // undefined
 ```
-
-
-
 
 ## Client (optional)
 
